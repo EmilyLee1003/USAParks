@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Home from './pages/Home/Home'
+import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <Router>
