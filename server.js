@@ -10,7 +10,7 @@ import router from './routes/api.mjs'
 dotenv.config({ silent: process.env.NODE_ENV === 'production' })
 
 const __dirname = path.resolve()
-const PORT = process.env.PORT
+const PORT = process.env.PORT ||8000;
 const app = express()
 
 app.use(morgan('tiny'))
