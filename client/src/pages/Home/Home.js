@@ -72,27 +72,6 @@ function Home() {
 		{/* <!-- Projects--> */}
 		<section className="projects-section bg-light" id="projects">
 			<div className="container">
-				{/* <!-- Featured Project Row-->
-				<!-- <div className="row align-items-center no-gutters mb-4 mb-lg-5">
-                <div className="col-xl-8 col-lg-7">
-                    <img className="img-fluid mb-3 mb-lg-0" src="assets/img/patagonia.jpeg" alt="" />
-                </div>
-                <div className="col-xl-4 col-lg-5">
-                    <div className="featured-text text-center text-lg-left">
-                        <h4>Ad Space Here</h4>
-                        <p className="text-black-50 mb-0">
-                            An area on the website we we can partner with other companies,
-                            organizations, conservations, state governemnts etc. to
-                            advertise and promote wildlife and land preservation and
-                            attraction.
-                        </p>
-                        <br />
-                        <button className="btn btn-primary mx-auto" type="submit">
-                            Learn More
-                        </button>
-                    </div>
-                </div>
-            </div> --> */}
 
 				<header>
 					<div
@@ -119,7 +98,7 @@ function Home() {
 							{/* <!-- Slide One --> */}
 							<div
 								className="carousel-item active"
-								style="background-image: url('assets/img/patagonia.jpeg')"
+								// style={{background-image: url('assets/img/patagonia.jpeg')}}
 							>
 								<div className="carousel-caption d-none d-md-block">
 									<h3 className="display-4">First Ad</h3>
@@ -132,7 +111,7 @@ function Home() {
 							{/* <!-- Slide Two --> */}
 							<div
 								className="carousel-item"
-								style="background-image: url('assets/img/iowa.jpg')"
+								// style={{backgroundImage: url('assets/img/iowa.jpg')}}
 							>
 								<div className="carousel-caption d-none d-md-block">
 									<a
@@ -145,7 +124,7 @@ function Home() {
 							{/* <!-- Slide Three --> */}
 							<div
 								className="carousel-item"
-								style="background-image: url('assets/img/yet.jpg')"
+								// style="background-image: url('assets/img/yet.jpg')"
 							>
 								<div className="carousel-caption d-none d-md-block">
 									<a

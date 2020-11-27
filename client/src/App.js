@@ -1,15 +1,18 @@
 import React, { useEffect } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import Home from './pages/Home/Home'
+// import Parks from './pages/Home/Parks'
 import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <Router>
       <div>
         <Switch>
-          <Route exact path='/'>
+          {/* <Route exact path='/'>
             <Home />
-          </Route>
+          </Route> */}
+          <Route exact path="/" component={Home} />
+          {/* <Route exact path="/" component={Parks} /> */}
 
           <Route>
             <h1>404 NOT FOUND</h1>
