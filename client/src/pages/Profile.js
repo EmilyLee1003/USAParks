@@ -95,10 +95,8 @@ function Profile() {
 			<div className="container">
 				{/* <!-- Page Heading --> */}
 				<h1 className="my-4">
-					Park Trails:
-					<small>
-						Be sure to select trails within your ability and comfort.
-					</small>
+					My Trails:
+
 				</h1>
 				{/* <!-- Trail 1 --> */}
 				<div className="row">
@@ -274,6 +272,8 @@ function Profile() {
 			</div>
 			{/* <!-- /.container --> */}
             </div>
+            </div>
+
 		// </section>
 		// 	{/* <!-- Footer--> */}
 		// 	<footer className="footer bg-black small text-center text-white-50">
