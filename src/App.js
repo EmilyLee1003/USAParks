@@ -1,6 +1,8 @@
 
-import About from '../components/About/About';
-import Masthead from '../components/masthead/masthead';
+import About from "./components/About/About";
+import Masthead from "./components/Masthead/Masthead";
+import SignUp from "./components/Sign-up/SignUp"
+
 import './App.css';
 
 function App() {
@@ -8,6 +10,7 @@ function App() {
     <div>
       <Navbar />
       <Masthead />
+      <SignUp/>
       <About />
     </div>
   );
