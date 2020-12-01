@@ -26,7 +26,7 @@
 
 /* Start here */
 
-@charset "UTF-8";
+/* @charset "UTF-8"; */
 /*!
 * Start Bootstrap - Grayscale v6.0.3 (https://startbootstrap.com/theme/grayscale)
 * Copyright 2013-2020 Start Bootstrap
@@ -2445,7 +2445,7 @@ textarea.form-control {
 .btn {
   display: inline-block;
   font-weight: 400;
-  color: #212529;
+  color:  #64a19d;
   text-align: center;
   vertical-align: middle;
   -webkit-user-select: none;
@@ -10566,4 +10566,10 @@ body {
 }
 #myTrails{
 color: grey;
+}
+
+/* Parks and Profile cards */
+.card-text{
+  word-break: break-word;
+  overflow: hidden;
 }

@@ -68,9 +68,9 @@ function Parks() {
 								road trip to get a full hands on experience or simply learning
 								more about the surrounding parks. These experiences help young
 								people have an immersive outdoor experiences in nature. Which we
-								hope they can share and teach with to the generations to come.
+								hope they can share and teach with to the generations to come.  
 								<a href="https://www.nationalgeographic.com/travel/travel-interests/tips-and-advice/9-tips-to-remember--traveling-national-parks/">
-									Learn more about resources here
+								Learn more about resources here
 								</a>
 							</p>
 						</div>
@@ -117,6 +117,8 @@ function Parks() {
 				<a className="btn btn-primary js-scroll-trigger" href="#about">
 					Search
 				</a>
+				<br></br>
+				<br></br>
 				<br></br>
 			</section>
 

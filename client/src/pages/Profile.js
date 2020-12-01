@@ -120,7 +120,6 @@ function Parks() {
 										<p className="card-text">Location: Humboldt, CA</p>
 										<p className="card-text">Difficulty: Hard</p>
 										<p className="card-text">Distance: 25 Mi</p>
-										<br></br>
 										<a
 											className="btn btn-primary js-scroll-trigger"
 											href="#about"

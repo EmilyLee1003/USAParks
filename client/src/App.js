@@ -3,7 +3,8 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Parks from "./pages/Parks";
 import Profile from "./pages/Profile";
-import "bootstrap/dist/css/bootstrap.min.css";
+// import "bootstrap/dist/css/bootstrap.min.css";
+import "./pages/Home/Home.css";
 function App() {
 	return (
 		<Router>
