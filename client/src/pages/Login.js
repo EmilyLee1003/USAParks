@@ -41,7 +41,7 @@ function LogIn() {
 				<a class="btn btn-primary js-scroll-trigger" href="#about">Sign Up</a>
 				<br></br>
 				<br></br>
-				<p id="changer">Or sign up <a href="./signup.html">here</a></p>
+				<p id="changer">Or sign up <a href="./Signup">here</a></p>
 			</div>
 		</div>
 	</header>

@@ -1,43 +1,23 @@
-<!DOCTYPE html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1, shrink-to-fit=no"
-		/>
-		<meta name="description" content="" />
-		<meta name="author" content="" />
-		<title>Nomad: Project Parks/home</title>
-		<!-- Icon -->
-		<link rel="icon" type="image/x-icon" href="assets/img/favicon.ico" />
-		<script
-			src="https://use.fontawesome.com/releases/v5.15.1/js/all.js"
-			crossorigin="anonymous"
-		></script>
-		<!-- Google fonts-->
-		<link
-			href="https://fonts.googleapis.com/css?family=Varela+Round"
-			rel="stylesheet"
-		/>
-		<link
-			href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-			rel="stylesheet"
-		/>
-		<link href="css/styles.css" rel="stylesheet" />
-	</head>
-	<!-- Lasthead-->
+import React, { useEffect } from "react";
+import "./Home/logo.svg";
+import "./Home/Home.css";
+import { Link } from "react-router-dom";
+
+function Signup() {
+	return (
+		<div>
+		{/* <!-- Lasthead--> */}
 	<header class="lasthead">
 		<div class="container d-flex h-100 align-items-center">
 			<div class="mx-auto text-center">
 				<h1 class="mx-auto my-0 text-uppercase">Project Parks</h1>
-				<!-- <h2 class="text-white-50 mx-auto mt-2 mb-5">
+				{/* <!-- <h2 class="text-white-50 mx-auto mt-2 mb-5">
 					See the beauty that lies in their own backyard
-                </h2> -->
-				<br />
-				<br />
-				<br />
-				<!-- Name Input -->
+                </h2> --> */}
+				<br></br>
+				<br></br>
+				<br></br>
+				{/* <!-- Name Input --> */}
 				<div class="container">
 					<form class="form-inline d-flex">
 						<input
@@ -49,9 +29,9 @@
 							required
 						/>
 					</form>
-					<br />
+					<br></br>
 
-					<!-- Email Input -->
+					{/* <!-- Email Input --> */}
 					<form class="form-inline d-flex">
 						<input
 							class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
@@ -62,9 +42,9 @@
 							required
 						/>
 					</form>
-					<br />
+					<br></br>
 
-					<!-- Password Input -->
+					{/* <!-- Password Input --> */}
 					<form class="form-inline d-flex">
 						<input
 							class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
@@ -75,9 +55,9 @@
 							required
 						/>
 					</form>
-					<br />
+					<br></br>
 
-					<!-- Password Input -->
+					{/* <!-- Password Input --> */}
 					<form class="form-inline d-flex">
 						<input
 							class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
@@ -88,8 +68,8 @@
 							required
 						/>
 					</form>
-					<br />
-					<!-- Terms and Agreement -->
+					<br></br>
+					{/* <!-- Terms and Agreement --> */}
 					<div class="form-group">
 						<div class="form-check">
 							<input
@@ -111,16 +91,20 @@
 							</div>
 						</div>
 					</div>
-					<br />
-					<!-- Sign Up & Log In Buttons -->
+					<br></br>
+					{/* <!-- Sign Up & Log In Buttons --> */}
 					<a class="btn btn-primary js-scroll-trigger" href="#about">Log In</a>
 					<a class="btn btn-primary js-scroll-trigger" href="#about">Sign Up</a>
-					<br />
-					<br />
-					<p id="changer">Or log in <a href="./login.html">here</a></p>
+					<br></br>
+					<br></br>
+					<p id="changer">Or log in <a href="./Login">here</a></p>
 				</div>
 			</div>
 		</div>
-		<br />
+		<br></br>
 	</header>
-</html>
+		</div>
+	);
+}
+
+export default Signup;

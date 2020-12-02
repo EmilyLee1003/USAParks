@@ -146,7 +146,7 @@ function Parks() {
 										<p className="card-text">Location: Yosemite, CA</p>
 										<p className="card-text">Difficulty: Easy</p>
 										<p className="card-text">Distance: 5 Mi</p>
-										<br></br>
+										
 										<a
 											className="btn btn-primary js-scroll-trigger"
 											href="#about"
@@ -172,8 +172,7 @@ function Parks() {
 										<p className="card-text">Location: Humboldt, CA</p>
 										<p className="card-text">Difficulty: Hard</p>
 										<p className="card-text">Distance: 155 Mi</p>
-										<br></br>
-										<br></br>
+									
 										<a
 											className="btn btn-primary js-scroll-trigger"
 											href="#about"
@@ -292,9 +291,13 @@ function Parks() {
 							</li>
 						</ul>
 					</div>
-					{/* <!-- /.container --> */}
+					
 				</div>
+				<footer className="footer bg-black small text-center text-white-50">
+				<div className="container">Copyright © Nomad LLC 2020</div>
+			</footer>
 			</section>
+			
 
 		</div>
 	);

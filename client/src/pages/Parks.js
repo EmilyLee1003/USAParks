@@ -30,13 +30,19 @@ function Parks() {
 					<div className="collapse navbar-collapse" id="navbarResponsive">
 						<ul className="navbar-nav ml-auto">
 							<li className="nav-item">
-							<Link className="nav-link js-scroll-trigger" to="/Home">About <span className="sr-only">(Home)</span></Link>
+								<Link className="nav-link js-scroll-trigger" to="/Home">
+									About <span className="sr-only">(Home)</span>
+								</Link>
 							</li>
 							<li className="nav-item">
-							<Link className="nav-link js-scroll-trigger" to="/Parks">Parks <span className="sr-only">(Parks)</span></Link>
+								<Link className="nav-link js-scroll-trigger" to="/Parks">
+									Parks <span className="sr-only">(Parks)</span>
+								</Link>
 							</li>
 							<li className="nav-item">
-							<Link className="nav-link js-scroll-trigger" to="/Profile">Profile <span className="sr-only">(Profile)</span></Link>
+								<Link className="nav-link js-scroll-trigger" to="/Profile">
+									Profile <span className="sr-only">(Profile)</span>
+								</Link>
 							</li>
 						</ul>
 					</div>
@@ -68,7 +74,7 @@ function Parks() {
 								road trip to get a full hands on experience or simply learning
 								more about the surrounding parks. These experiences help young
 								people have an immersive outdoor experiences in nature. Which we
-								hope they can share and teach with to the generations to come.  
+								hope they can share and teach with to the generations to come.
 								<a href="https://www.nationalgeographic.com/travel/travel-interests/tips-and-advice/9-tips-to-remember--traveling-national-parks/">
 								Learn more about resources here
 								</a>
@@ -303,14 +309,10 @@ function Parks() {
 					</li>
 				</ul>
 			</div>
-			{/* <!-- /.container --> */}
+			<footer className="footer bg-black small text-center text-white-50">
+				<div className="container">Copyright © Nomad LLC 2020</div>
+			</footer>
 		</div>
-		// </section>
-		// 	{/* <!-- Footer--> */}
-		// 	<footer className="footer bg-black small text-center text-white-50">
-		// 		<div className="container">Copyright © Nomad LLC 2020</div>
-		// 	</footer>
-		// </div>
 	);
 }
 
