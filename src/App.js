@@ -1,17 +1,16 @@
-
+import React from "react";
 import About from "./components/About/About";
 import Masthead from "./components/Masthead/Masthead";
-import SignUp from "./components/Sign-up/SignUp"
-
-import './App.css';
+import SignUp from "./components/SignUp/SignUp";
 
 function App() {
   return (
     <div>
       <Navbar />
       <Masthead />
-      <SignUp/>
       <About />
+      <SignUp/>
+      
     </div>
   );
 }

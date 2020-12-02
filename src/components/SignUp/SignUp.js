@@ -1,5 +1,4 @@
 import React from "react";
-import "./App.css"
 
 function SignUp() {
 	return (
@@ -77,6 +76,8 @@ function SignUp() {
 				<br />
 				<p id="changer">Or log in <a href="./login.html">here</a></p>
 			</div> 
-	</div> )}
+	</div> 
+	)
+}
 
 	export default SignUp;
