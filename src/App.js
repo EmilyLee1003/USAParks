@@ -1,7 +1,7 @@
-
-import About from '../components/About/About';
-import Masthead from '../components/masthead/masthead';
-import './App.css';
+import React from "react";
+import About from "./components/About/About";
+import Masthead from "./components/Masthead/Masthead";
+import SignUp from "./components/SignUp/SignUp";
 
 function App() {
   return (
@@ -9,6 +9,8 @@ function App() {
       <Navbar />
       <Masthead />
       <About />
+      <SignUp/>
+      
     </div>
   );
 }
