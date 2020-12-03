@@ -1,9 +1,13 @@
-import React, { useEffect } from "react";
+import React, { Component, useEffect } from "react";
 import "./Home/logo.svg";
 import "./Home/Home.css";
+import Mapcontainer from "../components/Mapcontainer"
 import { Link } from "react-router-dom";
 
-function Parks() {
+
+class Parks  extends Component {
+
+render (){
 	return (
 		<div>
 			{/* <!-- Navigation--> */}
@@ -82,11 +86,15 @@ function Parks() {
 						</div>
 					</div>
 					{/* <!-- Map  --> */}
-					<img
+					{/* <img
 						className="img-fluid"
 						src="assets/img/mapp.jpg"
 						alt="Arches National Park at night"
-					/>
+					/> */}
+				<Mapcontainer>
+					
+				</Mapcontainer>
+				
 					<br></br>
 					<br></br>
 					<br></br>
@@ -314,6 +322,7 @@ function Parks() {
 			</footer>
 		</div>
 	);
+}
 }
 
 export default Parks;

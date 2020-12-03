@@ -10569,4 +10569,8 @@ color: grey;
 }
 
 
-/* Login / Sign up */
+/* Map Div  */
+#map {
+  height: 100%;
+}
+

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import logo from "./logo.svg";
 import "./Home.css";
 import { Link } from "react-router-dom";
+// import patagonia from "./public/assets/patagonia.jpeg";
 
 function Home() {
 	return (
@@ -33,7 +34,7 @@ function Home() {
 							<Link className="nav-link js-scroll-trigger" to="/Home">About <span className="sr-only">(Home)</span></Link>
 							</li>
 							<li className="nav-item">
-              <Link className="nav-link js-scroll-trigger" to="/Parks">Parks <span className="sr-only">(Parks)</span></Link>
+              				<Link className="nav-link js-scroll-trigger" to="/Parks">Parks <span className="sr-only">(Parks)</span></Link>
 							</li>
 							<li className="nav-item">
 							<Link className="nav-link js-scroll-trigger" to="/Profile">Profile <span className="sr-only">(Profile)</span></Link>
@@ -108,6 +109,7 @@ function Home() {
 								<div
 									className="carousel-item active"
 									// style={{background-image: url('assets/img/patagonia.jpeg')}}
+									// <img className="patagonia" src={patagonia} alt="An out door clothing brand" />
 								>
 									<div className="carousel-caption d-none d-md-block">
 										<h3 className="display-4">First Ad</h3>
