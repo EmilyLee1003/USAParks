@@ -91,8 +91,8 @@ render (){
 						src="assets/img/mapp.jpg"
 						alt="Arches National Park at night"
 					/> */}
+				{/* <Mapcontainer google={props.google} style={style} containerStyle={containerStyle}/> */}
 				<Mapcontainer>
-					
 				</Mapcontainer>
 				
 					<br></br>
