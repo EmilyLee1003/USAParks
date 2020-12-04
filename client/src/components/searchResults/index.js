@@ -11,7 +11,6 @@ function SearchResults(props) {
             <p class="parkDescription">{props.description}</p></li>
           })}</h2>
         
-         
     </ul>
   );
 }

@@ -1,7 +1,7 @@
 import React, { Component, useEffect } from "react";
 import "./Home/logo.svg";
 import "./Home/Home.css";
-import Mapcontainer from "../components/Mapcontainer"
+import Mapcontainer from "../components/MapContainer/Mapcontainer"
 import { Link } from "react-router-dom";
 
 
@@ -86,12 +86,7 @@ render (){
 						</div>
 					</div>
 					{/* <!-- Map  --> */}
-					{/* <img
-						className="img-fluid"
-						src="assets/img/mapp.jpg"
-						alt="Arches National Park at night"
-					/> */}
-				{/* <Mapcontainer google={props.google} style={style} containerStyle={containerStyle}/> */}
+				
 				<Mapcontainer>
 				</Mapcontainer>
 				
