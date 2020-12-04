@@ -2,7 +2,9 @@ import React, { Component, useEffect } from "react";
 import "./Home/logo.svg";
 import "./Home/Home.css";
 import Mapcontainer from "../components/MapContainer/Mapcontainer"
+import Searchcard from "../components/Searchcard/Searchcard"
 import { Link } from "react-router-dom";
+import SearchResults from "../components/searchResults";
 
 
 class Parks  extends Component {
@@ -164,30 +166,8 @@ render (){
 							</div>
 						</div>
 					</div>
-					{/* <!-- Trail 2 --> */}
-					<div className="col-lg-4 col-sm-6 mb-4">
-						<div className="card h-100">
-							{/* <a href="#"><img className="card-img-top" src="./assets/img/yosemiteFalls.jpg" alt=""></a> */}
-							<div className="card-body">
-								<h4 className="card-title">
-									<a href="#">Yosemite Falls Trail</a>
-								</h4>
-								<p className="card-text">
-									Description: One of the best hikes in Yosemite National Park,
-									this trail provides close-up views of Yosemite's most
-									spectacular waterfall, as well as panoramic vistas of the
-									valley floor
-								</p>
-								<p className="card-text">Location: Yosemite, CA</p>
-								<p className="card-text">Difficulty: Easy</p>
-								<p className="card-text">Distance: 5 Mi</p>
-								<br></br>
-								<a className="btn btn-primary js-scroll-trigger" href="#about">
-									Add Trail
-								</a>
-							</div>
-						</div>
-					</div>
+					{/* Trail 2 */}
+					<SearchResults results = {["1","2","3"]}></SearchResults>
 					{/* <!-- Trail 3 --> */}
 					<div className="col-lg-4 col-sm-6 mb-4">
 						<div className="card h-100">
