@@ -25,7 +25,7 @@ const onUnmount = React.useCallback(function callback(map) {
 
 return (
     <LoadScript
-    googleMapsApiKey="AIzaSyBRwi94ipAW-bOQMes1v-VjARASmQTwvc0"
+    googleMapsApiKey={process.env.REACT_APP_APIKEY}
     >
     <GoogleMap
         mapContainerStyle={containerStyle}

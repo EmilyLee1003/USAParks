@@ -7,13 +7,14 @@ function SearchResults(props) {
   // var testResults = ["1", "2","3"]
   return (
     
-    <ul className="list-group search-results">
-          <h2>{props.results.map(fullName => {
+  <div className="row">
+          {props.results.map(fullName => {
             return <Searchcard fullName={fullName}></Searchcard>
             // <p class="parkDescription">{props.description}</p></li>
-          })}</h2>
+          })}
+          </div>
         
-    </ul>
+    
   );
 }
 

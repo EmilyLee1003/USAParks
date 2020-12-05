@@ -82,56 +82,36 @@ render (){
 								people have an immersive outdoor experiences in nature. Which we
 								hope they can share and teach with to the generations to come.
 								<a href="https://www.nationalgeographic.com/travel/travel-interests/tips-and-advice/9-tips-to-remember--traveling-national-parks/">
-								Learn more about resources here
+									Learn more about resources here
 								</a>
 							</p>
 						</div>
 					</div>
 					{/* <!-- Map  --> */}
-				
-				<Mapcontainer>
-				</Mapcontainer>
-				
+
+					<Mapcontainer></Mapcontainer>
+
 					<br></br>
 					<br></br>
 					<br></br>
 					<form className="form-inline d-flex">
 						<input
 							className="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
-							id="inputEmail"
-							type="email"
-							placeholder="Search Location..."
+							id="searchInput"
+							type="text"
+							placeholder="Search State..."
 						/>
 					</form>
 					<br></br>
 					<br></br>
-					<form className="form-inline d-flex">
-						<input
-							className="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
-							id="inputEmail"
-							type="email"
-							placeholder="Search Difficulty..."
-						/>
-					</form>
+					</div>
+					<br></br>
+					<a className="btn btn-primary js-scroll-trigger" href="#about">
+						Search</a>
 					<br></br>
 					<br></br>
-					<form className="form-inline d-flex">
-						<input
-							className="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
-							id="inputEmail"
-							type="email"
-							placeholder="Search Distance..."
-						/>
-					</form>
-				</div>
-				<br></br>
-				<a className="btn btn-primary js-scroll-trigger" href="#about">
-					Search
-				</a>
-				<br></br>
-				<br></br>
-				<br></br>
-			</section>
+					<br></br>
+				</section>
 
 			{/* <!-- Trail Content --> */}
 			<div className="container">
@@ -142,124 +122,9 @@ render (){
 						Be sure to select trails within your ability and comfort.
 					</small>
 				</h1>
-				{/* <!-- Trail 1 --> */}
-				<div className="row">
-					<div className="col-lg-4 col-sm-6 mb-4">
-						<div className="card h-100">
-							{/* <a href="#"><img className="card-img-top" src="./assets/img/lostCoast.jpg" alt=""></a> */}
-							<div className="card-body">
-								<h4 className="card-title">
-									<a href="#">The Lost Coast</a>
-								</h4>
-								<p className="card-text">
-									Description: Stretching between Shelter Cove to the south and
-									the Mattole River to the north, the Lost Coast is a wild land
-									of forests, fog, waves, and sand.
-								</p>
-								<p className="card-text">Location: Humboldt, CA</p>
-								<p className="card-text">Difficulty: Hard</p>
-								<p className="card-text">Distance: 25 Mi</p>
-								<br></br>
-								<a className="btn btn-primary js-scroll-trigger" href="#about">
-									Add Trail
-								</a>
-							</div>
-						</div>
-					</div>
-					{/* Trail 2 */}
-					<SearchResults results = {["1","2","3"]}></SearchResults>
-					{/* <!-- Trail 3 --> */}
-					<div className="col-lg-4 col-sm-6 mb-4">
-						<div className="card h-100">
-							{/* <a href="#"><img className="card-img-top" src="./assets/img/jamesIrvine.jpg" alt=""></a> */}
-							<div className="card-body">
-								<h4 className="card-title">
-									<a href="#">James Irvine Trail</a>
-								</h4>
-								<p className="card-text">
-									Description: his grove of old-growth coastal redwood trees
-									descends from a primeval forest that existed when dinosaurs
-									roamed the Earth.
-								</p>
-								<p className="card-text">Location: Humboldt, CA</p>
-								<p className="card-text">Difficulty: Hard</p>
-								<p className="card-text">Distance: 155 Mi</p>
-								<br></br>
-								<br></br>
-								<a className="btn btn-primary js-scroll-trigger" href="#about">
-									Add Trail
-								</a>
-							</div>
-						</div>
-					</div>
-					{/* <!-- Trail 4 --> */}
-					<div className="col-lg-4 col-sm-6 mb-4">
-						<div className="card h-100">
-							{/* <a href="#"><img className="card-img-top" src="./assets/img/jamesIrvine.jpg" alt=""></a> */}
-							<div className="card-body">
-								<h4 className="card-title">
-									<a href="#">Solstice Canyon Trail</a>
-								</h4>
-								<p className="card-text">
-									Description: Pomo Canyon Trail climbs through a lush redwood
-									forest, then it follows along a wooded ridge with stunning
-									vistas of the Pacific Ocean...
-								</p>
-								<p className="card-text">Location: Santa Monica, CA</p>
-								<p className="card-text">Difficulty: Easy</p>
-								<p className="card-text">Distance: 2 Mi</p>
-								<a className="btn btn-primary js-scroll-trigger" href="#about">
-									Add Trail
-								</a>
-							</div>
-						</div>
-					</div>
-					{/* <!-- Trail 5 --> */}
-					<div className="col-lg-4 col-sm-6 mb-4">
-						<div className="card h-100">
-							{/* <a href="#"><img className="card-img-top" src="./assets/img/lostCoast.jpg" alt=""></a> */}
-							<div className="card-body">
-								<h4 className="card-title">
-									<a href="#">Pomo Canyon Trail</a>
-								</h4>
-								<p className="card-text">
-									Description: Pomo Canyon Trail climbs through a lush redwood
-									forest, then it follows along a wooded ridge with stunning
-									vistas of the Pacific Ocean..
-								</p>
-								<p className="card-text">Location: Sonoma, CA</p>
-								<p className="card-text">Difficulty: Easy</p>
-								<p className="card-text">Distance: 4 Mi</p>
-								<a className="btn btn-primary js-scroll-trigger" href="#about">
-									Add Trail
-								</a>
-							</div>
-						</div>
-					</div>
-					{/* <!-- Trail 6 --> */}
-					<div className="col-lg-4 col-sm-6 mb-4">
-						<div className="card h-100">
-							{/* <a href="#"><img className="card-img-top" src="./assets/img/yosemite.jpg" alt=""></a> */}
-							<div className="card-body">
-								<h4 className="card-title">
-									<a href="#">River Valley</a>
-								</h4>
-								<p className="card-text">
-									Description: Stretching between Shelter Cove to the south and
-									the Mattole , the Lost Coast is a wild land of forests, fog,
-									waves, and sand.
-								</p>
-								<p className="card-text">Location: Humboldt, CA</p>
-								<p className="card-text">Difficulty: Medium</p>
-								<p className="card-text">Distance: 25 Mi</p>
-								<a className="btn btn-primary js-scroll-trigger" href="#about">
-									Add Trail
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				{/* <!-- /.row --> */}
+
+				{/* Trails */}
+				<SearchResults results={["1", "2", "3", "4", "5", "6"]}></SearchResults>
 
 				{/* <!-- Page Display --> */}
 				<ul className="pagination justify-content-center">

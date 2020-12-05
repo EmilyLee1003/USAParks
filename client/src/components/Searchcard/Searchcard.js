@@ -4,9 +4,9 @@ import CardBtn from "../CardBtn";
 
 function Searchcard(props) {
 return (
-<div>
-{/* <!-- Trail 1 --> */}
-<div className="row">
+
+
+
 <div className="col-lg-4 col-sm-6 mb-4">
     <div className="card h-100">
         {/* <a href="#"><img className="card-img-top" src="./assets/img/lostCoast.jpg" alt=""></a> */}
@@ -20,17 +20,19 @@ return (
                 of forests, fog, waves, and sand.
             </p>
             <p className="card-text">Location: Humboldt, CA</p>
-            <p className="card-text">Difficulty: Hard</p>
-            <p className="card-text">Distance: 25 Mi</p>
+            {/* <p className="card-text">Difficulty: Hard</p>
+            <p className="card-text">Distance: 25 Mi</p> */}
             <br></br>
             <a className="btn btn-primary js-scroll-trigger" href="#about">
-                Add Trail
+                Add Park
+            </a>
+            <a className="btn btn-primary js-scroll-trigger" href="#about">
+                More Info
             </a>
         </div>
     </div>
         </div>
-    </div>
-</div>
+    
 );
 }
 
