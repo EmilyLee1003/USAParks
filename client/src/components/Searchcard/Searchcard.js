@@ -26,6 +26,7 @@ return (
             <a className="btn btn-primary js-scroll-trigger" href="#about">
                 Add Park
             </a>
+            <div className="divider"></div>
             <a className="btn btn-primary js-scroll-trigger" href="#about">
                 More Info
             </a>

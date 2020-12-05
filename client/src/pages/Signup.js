@@ -94,6 +94,7 @@ function Signup() {
 					<br></br>
 					{/* <!-- Sign Up & Log In Buttons --> */}
 					<a class="btn btn-primary js-scroll-trigger" href="#about">Log In</a>
+					<div className="divider"></div>
 					<a class="btn btn-primary js-scroll-trigger" href="#about">Sign Up</a>
 					<br></br>
 					<br></br>
