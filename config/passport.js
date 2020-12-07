@@ -1,31 +1,7 @@
-require('dotenv').config();
 const passport = require("passport");
 const LocalStrategy = require("passport-local").Strategy;
 
 const db = require("../models");
-
-module.exports = {
-  "development": {
-    "username": process.env.DB_username,
-    "password": process.env.DB_password,
-    "database": process.env.DB_database,
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "test": {
-    "username": "root",
-    "password": null,
-    "database": "database_test",
-    "host": "127.0.0.1",
-    "dialect": "mysql"
-  },
-  "production": {
-    "use_env_variable": "JAWSDB_URL",
-    "dialect": "mysql"
-  }
-}
-
-
 
 // Telling passport we want to use a Local Strategy. In other words, we want login with a username/email and password
 passport.use(
@@ -36,7 +12,7 @@ passport.use(
     },
     (email, password, done) => {
       // When a user tries to sign in this code runs
-      db.user.findOne({
+      db.User.findOne({
         where: {
           email: email
         }
