@@ -4,7 +4,6 @@ import "./Home/Home.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-
 function Signup() {
 	const [formData, setFormData] = useState({name:"", email:"", password:""})
 	const handleInputChange = (inputName, inputValue) => setFormData({...formData, [inputName]: inputValue})

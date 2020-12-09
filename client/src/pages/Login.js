@@ -4,7 +4,6 @@ import "./Home/Home.css";
 import { Link } from "react-router-dom";
 import axios from "axios";
 
-
 function LogIn() {
 	const [formData, setFormData] = useState({email:"", password:""})
 	const handleInputChange = (inputName, inputValue) => setFormData({...formData, [inputName]: inputValue})
@@ -59,4 +58,4 @@ function LogIn() {
 	);
 }
 
-export default LogIn;
+ export default LogIn;
