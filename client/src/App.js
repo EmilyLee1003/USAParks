@@ -7,6 +7,7 @@ import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 // import "bootstrap/dist/css/bootstrap.min.css";
 import "./pages/Home/Home.css";
+
 function App() {
 	return (
 		<Router>
@@ -14,7 +15,7 @@ function App() {
 				<Switch>
 					<Route exact path="/Login"  component={Login} />
 					<Route exact path="/Signup"  component={Signup} />
-					<Route exact path="/Home"  component={Home} />
+					<Route exact path="/"  component={Home} />
 					<Route exact path="/Parks" component={Parks} />
         			<Route exact path="/Profile" component={Profile} />
 				</Switch>
