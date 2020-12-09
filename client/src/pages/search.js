@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import nationalParksAPI from "../utils/nationalparks";
 import Container from "../components/container";
 import SearchForm from "../components/searchForm";
