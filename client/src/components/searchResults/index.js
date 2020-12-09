@@ -1,15 +1,24 @@
 import React from "react";
 import "./style.css";
+import Btn from "../button/index"
+
 
 function SearchResults(props) {
   console.log(props.results)
   return (
     
     <ul className="list-group search-results">
-          <h2>{props.results.map(r => {
-            return <li className="list-group-item">{r} 
-            <p class="parkDescription">{props.description}</p></li>
-          })}</h2>
+          {props.results.map(r => {
+            return <div> {r.fullName} {r.description} {r.entranceFees.map( q => {
+              return <li className="list-group-item">{q.title} {q.description} {q.cost} </li>
+            })} {r.images.map( w => {
+              return <img src = {w.url} />})}
+          
+
+
+
+            </div>
+        })}
         
          
     </ul>

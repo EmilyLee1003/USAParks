@@ -74,10 +74,8 @@ const handleInputChange = event => {
           <SearchResults
           setSearch={props.setSearch}
            results={results}
-        
             />
 
-        
      </Container>
       </div>
         )
