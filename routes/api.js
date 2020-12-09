@@ -5,6 +5,14 @@ const router = express.Router()
 
 router.get('/users', (req, res) => {
   User.find({}).then((users) => res.json(users))
+  db.collection('users').findOne(email, function(err, user){
+    if(err) throw new Error(err);
+    if(!user) 
+      console.log('Not found');
+    else 
+      console.log('Found!');
+  })
+
 })
 
 router.post('/createuser', ({ body }, res) => {

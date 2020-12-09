@@ -9,7 +9,7 @@ function LogIn() {
 	const [formData, setFormData] = useState({email:"", password:""})
 	const handleInputChange = (inputName, inputValue) => setFormData({...formData, [inputName]: inputValue})
 	const handleLogInSubmit = () => {
-		axios.post("/api/createuser", formData).then((response) => {
+		axios.get("/api/users", formData).then((response) => {
 			console.log(response)
 		})
 	};
@@ -37,7 +37,7 @@ function LogIn() {
 					/>
 				<br></br>
 					<input
-						onChange = {(event)=>handleInputChange(event.target.name, event.target.value)}
+						// onChange = {(event)=>handleInputChange(event.target.name, event.target.value)}
 						name = 'password'
 						class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
 						id="inputEmail"
@@ -50,9 +50,7 @@ function LogIn() {
 				<button onClick={handleLogInSubmit}  class="btn btn-primary js-scroll-trigger" href="#about">Log In</button>
 				<br></br>
 				<br></br>
-				<button class="btn btn-primary js-scroll-trigger" href="#about">Sign Up</button>
-				<br></br>
-				<br></br>
+				{/* <button class="btn btn-primary js-scroll-trigger" href="#about">Sign Up</button> */}
 				<p id="changer">Or sign up <a href="./Signup">here</a></p>
 			</div>
 			</div>
