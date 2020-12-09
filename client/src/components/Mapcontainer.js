@@ -1,6 +1,6 @@
 import React from 'react'
 import { GoogleMap, LoadScript, Marker } from '@react-google-maps/api';
-import Markers from "./googleMarker/marker"
+
 
 const containerStyle = {
   width: '600px',
@@ -35,12 +35,12 @@ function Mapcontainer() {
         onLoad={onLoad}
         onUnmount={onUnmount}
       >
-        { <Markers> 
+        { <Marker> 
+          
         
 
 
-
-        </Markers>/* Child components, such as markers, info windows, etc. */ }
+        </Marker>/* Child components, such as markers, info windows, etc. */ }
         
         <></>
       </GoogleMap>

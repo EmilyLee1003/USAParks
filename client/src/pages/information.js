@@ -1,9 +1,7 @@
 import React, {Component, useState} from "react";
-import Container from "../components/container"
 import "./Home/logo.svg";
 import "./Home/Home.css";
 import { Link } from "react-router-dom";
-
 
 // //grab the park that was clicked in the search page and then 
 // //display additional information on this page 
@@ -15,12 +13,9 @@ import { Link } from "react-router-dom";
 function Information(props){
    console.log(props.search.description)
   
-
-
-
 return (
-  <div>
-  <nav
+    <div>
+      <nav
 				className="navbar navbar-expand-lg navbar-light fixed-top"
 				id="mainNav"
 			>
@@ -61,16 +56,74 @@ return (
 					</div>
 				</div>
 			</nav>
-  </div>
-<Container>
+			{/* <!-- Basthead--> */}
+			<header className="basthead">
+				<div className="container d-flex h-100 align-items-center">
+					<div className="mx-auto text-center">
+						<h1 className="mx-auto my-0 text-uppercase">Project Parks</h1>
+						<h2 className="text-white-50 mx-auto mt-2 mb-5">
+							Your list of National Parks waiting to be discovered!
+						</h2>
+						{/* <!-- <a className="btn btn-primary js-scroll-trigger" href="#about">Get Started</a> --> */}
+					</div>
+				</div>
+			</header>
+			{/* <!-- About--> */}
+      <div className="container">
+						{/* <!-- Page Heading --> */}
+						<h1 className="my-4">My Trails:</h1>
+						{/* <!-- Trail 1 --> */}
+						<div className="row">
+							<div className="col-lg-4 col-sm-6 mb-4">
+								<div className="card h-100">
+									{/* <a href="#"><img className="card-img-top" src="./assets/img/lostCoast.jpg" alt=""></a> */}
+									<div className="card-body">
+										<h4 className="card-title">
+											{props.search.fullName}
+										</h4>
+										<p className="card-text">
+											{props.search.description}
+										</p>
+										<p className="card-text"> Website: {props.search.url} </p>
+										<p className="card-text">{props.search.entranceFees.map( q => {
+    						return <li className="list-group-item">{q.title} {q.description} {q.cost} </li>
+  })}</p>
+										<p className="card-text">
+                    
+    <li> Monday:  {props.search.operatingHours[0].standardHours.monday} </li>
+    <li> Tuesday: {props.search.operatingHours[0].standardHours.tuesday}</li>
+    <li> Wednesday: {props.search.operatingHours[0].standardHours.wednesday}</li>
+    <li> Thursday: {props.search.operatingHours[0].standardHours.thursday} </li>
+   <li> Friday:  {props.search.operatingHours[0].standardHours.friday}</li>
+    <li> Saturday: {props.search.operatingHours[0].standardHours.saturday}</li>
+   <li> Sunday: {props.search.operatingHours[0].standardHours.sunday}</li> 
+                     </p>
+                     <div classN>
+                     {props.search.images.map( w => {
+    return <img src = {w.url} />})}
+                     </div>
+										<a
+											className="btn btn-primary js-scroll-trigger"
+											href="/search"
+										>
+											Go back 
+										</a>
+									</div>
+								</div>
+							</div>
+            </div>
+      </div>
+
+
+{/* <Container>
   <div>
     {props.search.description}
   </div>
   <div>
   {props.search.url}
   </div>
-  <div>
-  {props.search.entranceFees.map( q => {
+  <div> */}
+  {/* {props.search.entranceFees.map( q => {
     return <li className="list-group-item">{q.title} {q.description} {q.cost} </li>
   })}
   </div>
@@ -91,8 +144,8 @@ return (
 
   
   </Container>
- 
-
+     </div> */}
+     </div>
 )
 };
 export default Information; 
