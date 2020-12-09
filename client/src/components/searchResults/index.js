@@ -10,7 +10,7 @@ function SearchResults(props) {
   <div className="row">
           {props.results.map(r => {
             return <Searchcard fullName={r.fullName}></Searchcard>
-            // <p class="parkDescription">{props.description}</p></li>
+            
           })}
           </div>
         

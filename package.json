@@ -29,11 +29,6 @@
     "morgan": "^1.10.0",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-<<<<<<< HEAD
     "start": "^5.1.0"
-=======
-    "react-router-dom": "^5.2.0",
-    "styled-components": "^5.2.1"
->>>>>>> 9a30df8e6d2e54a424c6fb29fc59eabf105df1d7
   }
 }

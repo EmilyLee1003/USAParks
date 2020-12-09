@@ -102,16 +102,10 @@ function Signup() {
 					</div>
 					<br></br>
 					{/* <!-- Sign Up & Log In Buttons --> */}
-<<<<<<< HEAD
-					<a class="btn btn-primary js-scroll-trigger" href="#about">Log In</a>
-					<div className="divider"></div>
-					<a class="btn btn-primary js-scroll-trigger" href="#about">Sign Up</a>
-=======
 					<button class="btn btn-primary js-scroll-trigger" href="#about">Log In</button>
 					<br></br>
 					<br></br>
 					<button onClick={handleSignUpSubmit}  class="btn btn-primary js-scroll-trigger" href="#about">Sign Up</button>
->>>>>>> 9a30df8e6d2e54a424c6fb29fc59eabf105df1d7
 					<br></br>
 					<br></br>
 					<p id="changer">Or log in <a href="./Login">here</a></p>

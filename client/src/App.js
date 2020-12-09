@@ -23,9 +23,9 @@ function App() {
 		<Router>
 			<div>
 			<Wrapper>
-					<Route exact path="/Login"  component={Login} />
+					<Route exact path="/"  component={Login} />
 					<Route exact path="/Signup"  component={Signup} />
-					<Route exact path="/"  component={Home} />
+					<Route exact path="/Home"  component={Home} />
 					<Route exact path="/Parks" component={Parks} />
         			<Route exact path="/Profile" component={Profile} />
 
@@ -35,7 +35,6 @@ function App() {
           <Route path='/information'component={() => <Information search={value}/>}
 />
 			</Wrapper>
-			<Footer />
 			</div>
 		</Router>
 	);
