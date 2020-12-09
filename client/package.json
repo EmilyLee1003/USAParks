@@ -7,6 +7,7 @@
   "secure": false,
   "dependencies": {
     "@react-google-maps/api": "^1.13.0",
+    "axios": "^0.21.0",
     "bootstrap": "^4.5.3",
     "react": "^16.13.1",
     "react-bootstrap": "^1.4.0",

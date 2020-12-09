@@ -8,8 +8,8 @@ function SearchResults(props) {
   return (
     
   <div className="row">
-          {props.results.map(fullName => {
-            return <Searchcard fullName={fullName}></Searchcard>
+          {props.results.map(r => {
+            return <Searchcard fullName={r.fullName}></Searchcard>
             // <p class="parkDescription">{props.description}</p></li>
           })}
           </div>

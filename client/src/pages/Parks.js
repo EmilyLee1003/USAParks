@@ -1,15 +1,52 @@
-import React, { Component, useEffect } from "react";
+import React, { Component, useEffect, useState } from "react";
 import "./Home/logo.svg";
 import "./Home/Home.css";
 import Mapcontainer from "../components/MapContainer/Mapcontainer"
 import Searchcard from "../components/Searchcard/Searchcard"
 import { Link } from "react-router-dom";
 import SearchResults from "../components/searchResults";
+import nationalParksAPI from "../utils/nationalparks";
 
 
-class Parks  extends Component {
 
-render (){
+function Parks () {
+    const[currentValue, setCurrentValue] = useState("");
+    // const[states, setState] =useState("");
+    const[results,setResults] =useState([]);
+	const [error, setError] =useState("");
+	
+	const handleFormSubmit= () => {
+        if(!currentValue) {
+            return;
+        }
+        console.log(".........................."+currentValue)
+        nationalParksAPI.searchParks(currentValue)
+        
+        .then(res => {
+            console.log(res)
+            if(res.data.length===0){
+                throw new Error("No results found. Enter a valid state code.")
+            }
+            if (res.data.status === "error") {
+                throw new Error(res.data.data)
+            }
+        setResults(res.data.data);
+        console.log(res.data.data)
+        
+        }) 
+        .catch(err => setError(err));
+    }
+    
+
+
+	const handleInputChange = event => {
+		setCurrentValue(event.target.value);
+		console.log(event.target.value)
+	};
+
+
+
+
 	return (
 		<div>
 			{/* <!-- Navigation--> */}
@@ -100,14 +137,18 @@ render (){
 							id="searchInput"
 							type="text"
 							placeholder="Search State..."
+							onChange={handleInputChange}
 						/>
+					
+					<br></br>
+					<br></br>
+					
+					<br></br>
+					{/* <a className="btn btn-primary js-scroll-trigger" href="#about">Search</a> */}
+						<button type="submit" onClick={handleFormSubmit} className="btn btn-primary js-scroll-trigger">Search</button>
 					</form>
-					<br></br>
-					<br></br>
 					</div>
-					<br></br>
-					<a className="btn btn-primary js-scroll-trigger" href="#about">
-						Search</a>
+
 					<br></br>
 					<br></br>
 					<br></br>
@@ -124,7 +165,7 @@ render (){
 				</h1>
 
 				{/* Trails */}
-				<SearchResults results={["1", "2", "3", "4", "5", "6"]}></SearchResults>
+				<SearchResults results={results}></SearchResults>
 
 				{/* <!-- Page Display --> */}
 				<ul className="pagination justify-content-center">
@@ -163,6 +204,6 @@ render (){
 		</div>
 	);
 }
-}
+
 
 export default Parks;

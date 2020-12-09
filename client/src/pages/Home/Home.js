@@ -106,12 +106,12 @@ function Home() {
 							</ol>
 							<div className="carousel-inner" role="listbox">
 								{/* <!-- Slide One --> */}
-								<div
-									className="carousel-item active"
-									// style={{background-image: url('assets/img/patagonia.jpeg')}}
-									// <img className="patagonia" src={patagonia} alt="An out door clothing brand" />
-								>
+								
+								<img className="patagonia" src={"/assets/img/patagonia.jpeg"} alt="An outdoor clothing brand" />
+								<div className="carousel-item" role="listbox">
+								
 									<div className="carousel-caption d-none d-md-block">
+									
 										<h3 className="display-4">First Ad</h3>
 										<p className="lead">
 											This is a description for the first slide.
@@ -122,23 +122,24 @@ function Home() {
 										>
 											Visit Here
 										</a>
-									</div>
 								</div>
-								{/* <!-- Slide Two --> */}
-								<div
-									className="carousel-item"
-									// style={{backgroundImage: url('assets/img/iowa.jpg')}}
-								>
+								</div>
+								
+								<div className="carousel-item" role="listbox">
+									{/* <div className="carousel-item" */}
+									<img className="patagonia" src={"/assets/img/iowa.jpg"} alt="An outdoor clothing brand" />
+								
 									<div className="carousel-caption d-none d-md-block">
 										<a
 											className="adSpace"
-											href="https://www.iowadnr.gov/places-to-go/parks-2020"
+											href="/assets/img/iowa.jpg"
 										>
 											Visit Here
 										</a>
 									</div>
 								</div>
-								{/* <!-- Slide Three --> */}
+								
+								
 								<div
 									className="carousel-item"
 									// style="background-image: url('assets/img/yet.jpg')"
@@ -179,8 +180,8 @@ function Home() {
 							</a>
 						</div>
 					</header>
-					{/* 
-				<!-- Slider Content --> */}
+
+					
 					<section className="py-5">
 						<div className="container">
 							<h1 className="font-weight-light">Ad Space Here</h1>
