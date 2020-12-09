@@ -1,51 +1,44 @@
 import React, { Component, useEffect, useState } from "react";
 import "./Home/logo.svg";
 import "./Home/Home.css";
-import Mapcontainer from "../components/MapContainer/Mapcontainer"
-import Searchcard from "../components/Searchcard/Searchcard"
+import Mapcontainer from "../components/MapContainer/Mapcontainer";
+import Searchcard from "../components/Searchcard/Searchcard";
 import { Link } from "react-router-dom";
 import SearchResults from "../components/searchResults";
 import nationalParksAPI from "../utils/nationalparks";
 
+function Parks() {
+	const [currentValue, setCurrentValue] = useState("");
+	// const[states, setState] =useState("");
+	const [results, setResults] = useState([]);
+	const [error, setError] = useState("");
 
-
-function Parks () {
-    const[currentValue, setCurrentValue] = useState("");
-    // const[states, setState] =useState("");
-    const[results,setResults] =useState([]);
-	const [error, setError] =useState("");
-	
-	const handleFormSubmit= () => {
-        if(!currentValue) {
-            return;
-        }
-        console.log(".........................."+currentValue)
-        nationalParksAPI.searchParks(currentValue)
-        
-        .then(res => {
-            console.log(res)
-            if(res.data.length===0){
-                throw new Error("No results found. Enter a valid state code.")
-            }
-            if (res.data.status === "error") {
-                throw new Error(res.data.data)
-            }
-        setResults(res.data.data);
-        console.log(res.data.data)
-        
-        }) 
-        .catch(err => setError(err));
-    }
-    
-
-
-	const handleInputChange = event => {
-		setCurrentValue(event.target.value);
-		console.log(event.target.value)
+	const handleFormSubmit = (e) => {
+		e.preventDefault();
+		if (!currentValue) {
+			return;
+		}
+		console.log(".........................." + currentValue);
+		nationalParksAPI
+			.searchParks(currentValue)
+			.then((res) => {
+				console.log(res);
+				if (res.data.length === 0) {
+					throw new Error("No results found. Enter a valid state code.");
+				}
+				if (res.data.status === "error") {
+					throw new Error(res.data.data);
+				}
+				setResults(res.data.data);
+				console.log(res.data.data);
+			})
+			.catch((err) => setError(err));
 	};
 
-
-
+	const handleInputChange = (event) => {
+		setCurrentValue(event.target.value);
+		console.log(event.target.value);
+	};
 
 	return (
 		<div>
@@ -139,20 +132,26 @@ function Parks () {
 							placeholder="Search State..."
 							onChange={handleInputChange}
 						/>
-					
-					<br></br>
-					<br></br>
-					
-					<br></br>
-					{/* <a className="btn btn-primary js-scroll-trigger" href="#about">Search</a> */}
-						<button type="submit" onClick={handleFormSubmit} className="btn btn-primary js-scroll-trigger">Search</button>
-					</form>
-					</div>
 
-					<br></br>
-					<br></br>
-					<br></br>
-				</section>
+						<br></br>
+						<br></br>
+
+						<br></br>
+						{/* <a className="btn btn-primary js-scroll-trigger" href="#about">Search</a> */}
+						<button
+							type="submit"
+							onClick={(e) => handleFormSubmit(e)}
+							className="btn btn-primary js-scroll-trigger"
+						>
+							Search
+						</button>
+					</form>
+				</div>
+
+				<br></br>
+				<br></br>
+				<br></br>
+			</section>
 
 			{/* <!-- Trail Content --> */}
 			<div className="container">
@@ -204,6 +203,5 @@ function Parks () {
 		</div>
 	);
 }
-
 
 export default Parks;
