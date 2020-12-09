@@ -1,15 +1,15 @@
-import express from 'express'
-import mongoose from 'mongoose'
-import path from 'path'
-import morgan from 'morgan'
-import dotenv from 'dotenv'
+const express = require('express');
+const mongoose = require('mongoose') ;
+const path = require('path') ;
+const morgan = require('morgan');
+const dotenv = require('dotenv');
 
-import testRouter from './routes/testRouters.mjs'
-import router from './routes/api.mjs'
+// const testRouter = require('./routes/testRouters.mjs');
+const router = require('./routes/api.js');
 
 dotenv.config({ silent: process.env.NODE_ENV === 'production' })
 
-const __dirname = path.resolve()
+// const __dirname = path.resolve()
 const PORT = process.env.PORT ||8000;
 const app = express()
 
@@ -28,7 +28,7 @@ mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/users', {
 
 // routes
 app.use('/api', router)
-app.use('/r', testRouter)
+// app.use('/r', testRouter)
 
 app.get('*', (req, res) => {
   res.sendFile(path.join(__dirname, './client/build/index.html'))

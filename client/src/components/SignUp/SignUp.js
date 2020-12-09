@@ -13,9 +13,7 @@ function SignUp() {
 					aria-describedby="inputGroupPrepend"
 					required
 					/>
-				</form>
 				<br />
-				<form class="form-inline d-flex">
 				<input
 					class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
 					id="email-input"
@@ -24,9 +22,7 @@ function SignUp() {
 					aria-describedby="inputGroupPrepend"
 					required
 					/>
-				</form>
 				<br />
-				<form class="form-inline d-flex">
 					<input
 					class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
 					id="inputPassword"
@@ -35,17 +31,15 @@ function SignUp() {
 					aria-describedby="inputGroupPrepend"
 					required
 					/>
-				</form>
 				<br />
-				<form class="form-inline d-flex">
-					<input
+					{/* <input
 					class="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
 					id="inputVerify"
 					type="password"
 					placeholder="Verify Password"
 					aria-describedby="inputGroupPrepend"
 					required
-					/>
+					/> */}
 				</form>
 				<br />
 				<div class="form-group">

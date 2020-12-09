@@ -1,11 +1,16 @@
 import React, { Component, useEffect, useState } from "react";
 import "./Home/logo.svg";
 import "./Home/Home.css";
+<<<<<<< HEAD
 import Mapcontainer from "../components/MapContainer/Mapcontainer";
 import Searchcard from "../components/Searchcard/Searchcard";
 import { Link } from "react-router-dom";
 import SearchResults from "../components/searchResults";
 import nationalParksAPI from "../utils/nationalparks";
+=======
+import { Link } from "react-router-dom";
+import "./Mapcontainer";
+>>>>>>> 9a30df8e6d2e54a424c6fb29fc59eabf105df1d7
 
 function Parks() {
 	const [currentValue, setCurrentValue] = useState("");
@@ -118,9 +123,32 @@ function Parks() {
 						</div>
 					</div>
 					{/* <!-- Map  --> */}
+<<<<<<< HEAD
 
 					<Mapcontainer></Mapcontainer>
 
+=======
+					{/* <img
+						className="img-fluid"
+						src="assets/img/mapp.jpg"
+						alt="Arches National Park at night"
+					/> */}
+				{/* <Mapcontainer google={props.google} style={style} containerStyle={containerStyle}/> */}
+				{/* <Mapcontainer>
+				</Mapcontainer> */}
+					<br></br>
+					<br></br>
+					<br></br>
+					<form className="form-inline d-flex">
+						<input
+							className="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
+							id="inputEmail"
+							type="email"
+							placeholder="Search Location..."
+						/>
+					</form>
+					<br></br>
+>>>>>>> 9a30df8e6d2e54a424c6fb29fc59eabf105df1d7
 					<br></br>
 					<br></br>
 					<br></br>
