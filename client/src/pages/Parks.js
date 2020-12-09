@@ -1,8 +1,8 @@
 import React, { Component, useEffect } from "react";
 import "./Home/logo.svg";
 import "./Home/Home.css";
-import Mapcontainer from "../components/Mapcontainer"
 import { Link } from "react-router-dom";
+import "./Mapcontainer";
 
 
 class Parks  extends Component {
@@ -92,9 +92,8 @@ render (){
 						alt="Arches National Park at night"
 					/> */}
 				{/* <Mapcontainer google={props.google} style={style} containerStyle={containerStyle}/> */}
-				<Mapcontainer>
-				</Mapcontainer>
-				
+				{/* <Mapcontainer>
+				</Mapcontainer> */}
 					<br></br>
 					<br></br>
 					<br></br>
