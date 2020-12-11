@@ -100,14 +100,14 @@ function Signup() {
 						</div>
 					</div>
 					<br></br>
-					{/* <!-- Sign Up & Log In Buttons --> */}
+					{/* <!-- Sign Up & Log In Buttons -->
 					<button className="btn btn-primary js-scroll-trigger" href="#about">Log In</button>
-					<br></br>
+					<br></br> */}
 					<br></br>
 					<button onClick={handleSignUpSubmit}  className="btn btn-primary js-scroll-trigger" href="#about">Sign Up</button>
 					<br></br>
 					<br></br>
-					<p id="changer">Or log in <a href="./Login">here</a></p>
+					<p id="changer">Or log in <a href="./">here</a></p>
 				</div>
 			</div>
 		</div>

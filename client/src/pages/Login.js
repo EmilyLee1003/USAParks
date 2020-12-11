@@ -8,7 +8,7 @@ function LogIn() {
 	const [formData, setFormData] = useState({email:"", password:""})
 	const handleInputChange = (inputName, inputValue) => setFormData({...formData, [inputName]: inputValue})
 	const handleLogInSubmit = () => {
-		axios.get("/api/users", formData).then((response) => {
+		axios.post("/api/users", formData).then((response) => {
 			console.log(response)
 		})
 	};
