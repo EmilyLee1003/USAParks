@@ -4,20 +4,27 @@ import Container from "../components/container";
 import SearchForm from "../components/searchForm";
 import SearchResults from "../components/searchResults";
 import Alert from "../components/alert";
+import Button from "../components/button/index";
+import Btn from "../components/button/index";
+import Mapcontainer from "./Mapcontainer";
 
-function Search(){
-    const[search,setSearch] = useState("");
+
+
+//props is when its coming from parent to child 
+//whenever there is a prop you have to look at the parent and see what they're passing in
+//
+function Search(props){
+    const[currentValue, setCurrentValue] = useState("");
     // const[states, setState] =useState("");
     const[results,setResults] =useState([]);
-    const[description,setDescription] =useState([]);
     const [error, setError] =useState("");
 
 const handleFormSubmit= () => {
-        if(!search) {
+        if(!currentValue) {
             return;
         }
-        console.log(".........................."+search)
-        nationalParksAPI.searchParks(search)
+        console.log(".........................."+currentValue)
+        nationalParksAPI.searchParks(currentValue)
         
         .then(res => {
             console.log(res)
@@ -25,10 +32,11 @@ const handleFormSubmit= () => {
                 throw new Error("No results found. Enter a valid state code.")
             }
             if (res.data.status === "error") {
-                throw new Error(res.data.data.fullName)
+                throw new Error(res.data.data)
             }
-           setResults(res.data.data.map(d => d.fullName));
-           setDescription(res.data.data.map(d => d.description))
+           setResults(res.data.data);
+           console.log(res.data.data)
+          
         }) 
         .catch(err => setError(err));
     }
@@ -36,42 +44,52 @@ const handleFormSubmit= () => {
 
 
 const handleInputChange = event => {
-    setSearch(event.target.value);
+    setCurrentValue(event.target.value);
     console.log(event.target.value)
 };
-//updates the usestate
 
-// handleFormSubmit =event => {
-//     event.preventDefault();
-//     nationalParksAPI.searchParks(this.state.search)
-//     .then(res => {
-//         if (res.data.status === "error"){
-//             throw new Error (res.data.fullName);
-//         }
-//         this.setState({ results : res.data.fullName, error: ""});
-//     })
-//         .catch(err => this.setState({error: err.fullName}));
-//     };
+console.log(results)
+
+// const handleBtnClick =event => {
+//     const btnType =event.target.attributes.getNamedItem("data-value").value;
+//     if(btnType === "Add To My List"){
+
+//     }
+// }
+// function handleBtnClick(event){
+//     console.log("button was clicked")
+// }
 
         return (
-            <div>
-                <Container style={{ minHeight: "80%" }}>
+    <div>
+        <Container style={{ minHeight: "80%" }}>
         <h1 className="text-center">Search by State</h1>
         <Alert type="danger" style={{ opacity: error ? 1 : 0, marginBottom: 10 }}>
           {error}
         </Alert>
+
+        <Mapcontainer
+          results={results}
+          
+        >
+            
+        </Mapcontainer>
           <SearchForm
           handleInputChange ={handleInputChange}
-          results={search}
-          description ={search}
+          results={currentValue}
             handleFormSubmit={handleFormSubmit}
-            // handleInputChange={this.handleInputChange}
-            // states={this.state.states}
           />
-          <SearchResults results={results} 
-                        description ={description}/>
+         
+          <SearchResults
+          
+          setSearch={props.setSearch}
+           results={results}
+            />
+            
+            
+        
      </Container>
-            </div>
+      </div>
         )
     };
 

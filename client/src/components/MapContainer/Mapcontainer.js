@@ -1,44 +1,46 @@
-import React from 'react'
-import { GoogleMap, LoadScript } from '@react-google-maps/api';
+import React from "react";
+import { GoogleMap, LoadScript, Marker } from "@react-google-maps/api";
 
 const containerStyle = {
-width: '1100px',
-height: '600px'
+	width: "1100px",
+	height: "600px",
 };
 const center = {
-lat: -3.745,
-lng: -38.523
+	lat: 34.0,
+	lng: -118.4,
 };
 
-function Mapcontainer() {
-const [map, setMap] = React.useState(null)
+function Mapcontainer(props) {
+	console.log(props);
+	const [map, setMap] = React.useState(null);
 
-const onLoad = React.useCallback(function callback(map) {
-    const bounds = new window.google.maps.LatLngBounds();
-    map.fitBounds(bounds);
-    setMap(map)
-}, [])
+	// const onLoad = React.useCallback(function callback(map) {
+	// 	const bounds = new window.google.maps.LatLngBounds();
+	// 	map.fitBounds(bounds);
+	// 	setMap(map);
+	// }, []);
 
-const onUnmount = React.useCallback(function callback(map) {
-    setMap(null)
-}, [])
+	const onUnmount = React.useCallback(function callback(map) {
+		setMap(null);
+	}, []);
 
-return (
-    <LoadScript
-    googleMapsApiKey={process.env.REACT_APP_APIKEY}
-    >
-    <GoogleMap
-        mapContainerStyle={containerStyle}
-        center={center}
-        zoom={10}
-        onLoad={onLoad}
-        onUnmount={onUnmount}
-    >
-        { /* Child components, such as markers, info windows, etc. */ }
-        <></>
-    </GoogleMap>
-    </LoadScript>
-)
+	console.log(center.lat + "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+	console.log(center.lng + "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%");
+	console.log(props);
+
+	return (
+		<LoadScript googleMapsApiKey={process.env.REACT_APP_API_KEY}>
+			<GoogleMap
+				mapContainerStyle={containerStyle}
+				center={center}
+				zoom={5}
+				// onLoad={onLoad}
+				onUnmount={onUnmount}
+			>
+				{props?.results?.map(r=><Marker position={{lat:+r.latitude, lng: +r.longitude}} />)}
+			</GoogleMap>
+		</LoadScript>
+	);
 }
 
-export default React.memo(Mapcontainer)
+export default React.memo(Mapcontainer);

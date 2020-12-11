@@ -119,7 +119,7 @@ function Parks() {
 					</div>
 					{/* <!-- Map  --> */}
 
-					<Mapcontainer></Mapcontainer>
+					<Mapcontainer results={results}></Mapcontainer>
 
 					<br></br>
 					<br></br>
