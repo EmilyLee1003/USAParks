@@ -65,7 +65,12 @@ const handleInputChange = event => {
         <Alert type="danger" style={{ opacity: error ? 1 : 0, marginBottom: 10 }}>
           {error}
         </Alert>
-
+                
+        <Mapcontainer
+          results={results}
+        >
+            
+        </Mapcontainer>
           <SearchForm
           handleInputChange ={handleInputChange}
           results={currentValue}
