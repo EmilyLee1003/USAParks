@@ -1,13 +1,45 @@
-import React, { Component, useEffect } from "react";
+import React, { Component, useEffect, useState } from "react";
 import "./Home/logo.svg";
 import "./Home/Home.css";
+import Mapcontainer from "../components/MapContainer/Mapcontainer";
+import Searchcard from "../components/Searchcard/Searchcard";
 import { Link } from "react-router-dom";
-import "./Mapcontainer";
+import SearchResults from "../components/searchResults";
+import nationalParksAPI from "../utils/nationalparks";
 
+function Parks() {
+	const [currentValue, setCurrentValue] = useState("");
+	// const[states, setState] =useState("");
+	const [results, setResults] = useState([]);
+	const [error, setError] = useState("");
 
-class Parks  extends Component {
+	const handleFormSubmit = (e) => {
+		e.preventDefault();
+		if (!currentValue) {
+			return;
+		}
+		console.log(".........................." + currentValue);
+		nationalParksAPI
+			.searchParks(currentValue)
+			.then((res) => {
+				console.log(res);
+				if (res.data.length === 0) {
+					throw new Error("No results found. Enter a valid state code.");
+				}
+				if (res.data.status === "error") {
+					throw new Error(res.data.data);
+				}
+				setResults(res.data.data);
+				console.log(res.data.data);
+			})
+			.catch((err) => setError(err));
+	};
 
-render (){
+	const handleInputChange = (event) => {
+		setCurrentValue(event.target.value);
+		console.log(event.target.value);
+	};
+
 	return (
 		<div>
 			{/* <!-- Navigation--> */}
@@ -79,57 +111,43 @@ render (){
 								more about the surrounding parks. These experiences help young
 								people have an immersive outdoor experiences in nature. Which we
 								hope they can share and teach with to the generations to come.
-								<a href="https://www.nationalgeographic.com/travel/travel-interests/tips-and-advice/9-tips-to-remember--traveling-national-parks/">
-								Learn more about resources here
+								<a href="https://www.nationalgeographic.com/travel/travel-interests/tips-and-advice/9-tips-to-remember--traveling-national-parks/" target="_blank">
+									Learn more about resources here
 								</a>
 							</p>
 						</div>
 					</div>
 					{/* <!-- Map  --> */}
-					{/* <img
-						className="img-fluid"
-						src="assets/img/mapp.jpg"
-						alt="Arches National Park at night"
-					/> */}
-				{/* <Mapcontainer google={props.google} style={style} containerStyle={containerStyle}/> */}
-				{/* <Mapcontainer>
-				</Mapcontainer> */}
+
+					<Mapcontainer results={results}></Mapcontainer>
+
 					<br></br>
 					<br></br>
 					<br></br>
 					<form className="form-inline d-flex">
 						<input
 							className="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
-							id="inputEmail"
-							type="email"
-							placeholder="Search Location..."
+							id="searchInput"
+							type="text"
+							placeholder="Search State..."
+							onChange={handleInputChange}
 						/>
-					</form>
-					<br></br>
-					<br></br>
-					<form className="form-inline d-flex">
-						<input
-							className="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
-							id="inputEmail"
-							type="email"
-							placeholder="Search Difficulty..."
-						/>
-					</form>
-					<br></br>
-					<br></br>
-					<form className="form-inline d-flex">
-						<input
-							className="form-control flex-fill mr-0 mr-sm-2 mb-3 mb-sm-0"
-							id="inputEmail"
-							type="email"
-							placeholder="Search Distance..."
-						/>
+
+						<br></br>
+						<br></br>
+
+						<br></br>
+						{/* <a className="btn btn-primary js-scroll-trigger" href="#about">Search</a> */}
+						<button
+							type="submit"
+							onClick={(e) => handleFormSubmit(e)}
+							className="btn btn-primary js-scroll-trigger"
+						>
+							Search
+						</button>
 					</form>
 				</div>
-				<br></br>
-				<a className="btn btn-primary js-scroll-trigger" href="#about">
-					Search
-				</a>
+
 				<br></br>
 				<br></br>
 				<br></br>
@@ -144,146 +162,9 @@ render (){
 						Be sure to select trails within your ability and comfort.
 					</small>
 				</h1>
-				{/* <!-- Trail 1 --> */}
-				<div className="row">
-					<div className="col-lg-4 col-sm-6 mb-4">
-						<div className="card h-100">
-							{/* <a href="#"><img className="card-img-top" src="./assets/img/lostCoast.jpg" alt=""></a> */}
-							<div className="card-body">
-								<h4 className="card-title">
-									<a href="#">The Lost Coast</a>
-								</h4>
-								<p className="card-text">
-									Description: Stretching between Shelter Cove to the south and
-									the Mattole River to the north, the Lost Coast is a wild land
-									of forests, fog, waves, and sand.
-								</p>
-								<p className="card-text">Location: Humboldt, CA</p>
-								<p className="card-text">Difficulty: Hard</p>
-								<p className="card-text">Distance: 25 Mi</p>
-								<br></br>
-								<a className="btn btn-primary js-scroll-trigger" href="#about">
-									Add Trail
-								</a>
-							</div>
-						</div>
-					</div>
-					{/* <!-- Trail 2 --> */}
-					<div className="col-lg-4 col-sm-6 mb-4">
-						<div className="card h-100">
-							{/* <a href="#"><img className="card-img-top" src="./assets/img/yosemiteFalls.jpg" alt=""></a> */}
-							<div className="card-body">
-								<h4 className="card-title">
-									<a href="#">Yosemite Falls Trail</a>
-								</h4>
-								<p className="card-text">
-									Description: One of the best hikes in Yosemite National Park,
-									this trail provides close-up views of Yosemite's most
-									spectacular waterfall, as well as panoramic vistas of the
-									valley floor
-								</p>
-								<p className="card-text">Location: Yosemite, CA</p>
-								<p className="card-text">Difficulty: Easy</p>
-								<p className="card-text">Distance: 5 Mi</p>
-								<br></br>
-								<a className="btn btn-primary js-scroll-trigger" href="#about">
-									Add Trail
-								</a>
-							</div>
-						</div>
-					</div>
-					{/* <!-- Trail 3 --> */}
-					<div className="col-lg-4 col-sm-6 mb-4">
-						<div className="card h-100">
-							{/* <a href="#"><img className="card-img-top" src="./assets/img/jamesIrvine.jpg" alt=""></a> */}
-							<div className="card-body">
-								<h4 className="card-title">
-									<a href="#">James Irvine Trail</a>
-								</h4>
-								<p className="card-text">
-									Description: his grove of old-growth coastal redwood trees
-									descends from a primeval forest that existed when dinosaurs
-									roamed the Earth.
-								</p>
-								<p className="card-text">Location: Humboldt, CA</p>
-								<p className="card-text">Difficulty: Hard</p>
-								<p className="card-text">Distance: 155 Mi</p>
-								<br></br>
-								<br></br>
-								<a className="btn btn-primary js-scroll-trigger" href="#about">
-									Add Trail
-								</a>
-							</div>
-						</div>
-					</div>
-					{/* <!-- Trail 4 --> */}
-					<div className="col-lg-4 col-sm-6 mb-4">
-						<div className="card h-100">
-							{/* <a href="#"><img className="card-img-top" src="./assets/img/jamesIrvine.jpg" alt=""></a> */}
-							<div className="card-body">
-								<h4 className="card-title">
-									<a href="#">Solstice Canyon Trail</a>
-								</h4>
-								<p className="card-text">
-									Description: Pomo Canyon Trail climbs through a lush redwood
-									forest, then it follows along a wooded ridge with stunning
-									vistas of the Pacific Ocean...
-								</p>
-								<p className="card-text">Location: Santa Monica, CA</p>
-								<p className="card-text">Difficulty: Easy</p>
-								<p className="card-text">Distance: 2 Mi</p>
-								<a className="btn btn-primary js-scroll-trigger" href="#about">
-									Add Trail
-								</a>
-							</div>
-						</div>
-					</div>
-					{/* <!-- Trail 5 --> */}
-					<div className="col-lg-4 col-sm-6 mb-4">
-						<div className="card h-100">
-							{/* <a href="#"><img className="card-img-top" src="./assets/img/lostCoast.jpg" alt=""></a> */}
-							<div className="card-body">
-								<h4 className="card-title">
-									<a href="#">Pomo Canyon Trail</a>
-								</h4>
-								<p className="card-text">
-									Description: Pomo Canyon Trail climbs through a lush redwood
-									forest, then it follows along a wooded ridge with stunning
-									vistas of the Pacific Ocean..
-								</p>
-								<p className="card-text">Location: Sonoma, CA</p>
-								<p className="card-text">Difficulty: Easy</p>
-								<p className="card-text">Distance: 4 Mi</p>
-								<a className="btn btn-primary js-scroll-trigger" href="#about">
-									Add Trail
-								</a>
-							</div>
-						</div>
-					</div>
-					{/* <!-- Trail 6 --> */}
-					<div className="col-lg-4 col-sm-6 mb-4">
-						<div className="card h-100">
-							{/* <a href="#"><img className="card-img-top" src="./assets/img/yosemite.jpg" alt=""></a> */}
-							<div className="card-body">
-								<h4 className="card-title">
-									<a href="#">River Valley</a>
-								</h4>
-								<p className="card-text">
-									Description: Stretching between Shelter Cove to the south and
-									the Mattole , the Lost Coast is a wild land of forests, fog,
-									waves, and sand.
-								</p>
-								<p className="card-text">Location: Humboldt, CA</p>
-								<p className="card-text">Difficulty: Medium</p>
-								<p className="card-text">Distance: 25 Mi</p>
-								<a className="btn btn-primary js-scroll-trigger" href="#about">
-									Add Trail
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-				{/* <!-- /.row --> */}
+
+				{/* Trails */}
+				<SearchResults results={results}></SearchResults>
 
 				{/* <!-- Page Display --> */}
 				<ul className="pagination justify-content-center">
@@ -321,7 +202,6 @@ render (){
 			</footer>
 		</div>
 	);
-}
 }
 
 export default Parks;

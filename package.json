@@ -27,9 +27,9 @@
     "if-env": "^1.0.4",
     "mongoose": "^5.5.15",
     "morgan": "^1.10.0",
+    "nodemon": "^2.0.6",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
-    "react-router-dom": "^5.2.0",
-    "styled-components": "^5.2.1"
+    "start": "^5.1.0"
   }
 }

@@ -6,8 +6,8 @@ import SearchResults from "../components/searchResults";
 import Alert from "../components/alert";
 import Button from "../components/button/index";
 import Btn from "../components/button/index";
-// import GoogleMapReact from 'google-map-react';
 
+import Mapcontainer from "./Mapcontainer";
 
 //props is when its coming from parent to child 
 //whenever there is a prop you have to look at the parent and see what they're passing in
@@ -48,6 +48,8 @@ const handleInputChange = event => {
 };
 
 
+
+
 // const handleBtnClick =event => {
 //     const btnType =event.target.attributes.getNamedItem("data-value").value;
 //     if(btnType === "Add To My List"){
@@ -65,9 +67,12 @@ const handleInputChange = event => {
         <Alert type="danger" style={{ opacity: error ? 1 : 0, marginBottom: 10 }}>
           {error}
         </Alert>
-                
+
+
         <Mapcontainer
           results={results}
+          
+
         >
             
         </Mapcontainer>
@@ -76,10 +81,16 @@ const handleInputChange = event => {
           results={currentValue}
             handleFormSubmit={handleFormSubmit}
           />
+
+         
           <SearchResults
+          
           setSearch={props.setSearch}
            results={results}
             />
+            
+            
+        
 
      </Container>
       </div>

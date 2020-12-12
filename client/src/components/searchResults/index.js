@@ -1,27 +1,26 @@
 import React from "react";
 import "./style.css";
-import Btn from "../button/index"
+
+import Searchcard from "../Searchcard/Searchcard"
 
 
 function SearchResults(props) {
   console.log(props.results)
+  // var testResults = ["1", "2","3"]
   return (
     
-    <ul className="list-group search-results">
+
+  <div className="row">
           {props.results.map(r => {
-            return <div> {r.fullName} {r.description} {r.entranceFees.map( q => {
+            return <Searchcard fullName={r.fullName} discription={r.discription} entranceFees={r.entranceFees.map( q => {
               return <li className="list-group-item">{q.title} {q.description} {q.cost} </li>
-            })} {r.images.map( w => {
-              return <img src = {w.url} />})}
-          
+            })} images={r.images[0].url}></Searchcard>
+            
+          })}
+          </div>
 
-
-
-            </div>
-        })}
         
-         
-    </ul>
+    
   );
 }
 

@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import logo from "./logo.svg";
 import "./Home.css";
 import { Link } from "react-router-dom";
+import Carousel from "react-bootstrap/Carousel";
 // import patagonia from "./public/assets/patagonia.jpeg";
 
 function Home() {
@@ -31,13 +32,19 @@ function Home() {
 					<div className="collapse navbar-collapse" id="navbarResponsive">
 						<ul className="navbar-nav ml-auto">
 							<li className="nav-item">
-							<Link className="nav-link js-scroll-trigger" to="/Home">About <span className="sr-only">(Home)</span></Link>
+								<Link className="nav-link js-scroll-trigger" to="/Home">
+									About <span className="sr-only">(Home)</span>
+								</Link>
 							</li>
 							<li className="nav-item">
-              				<Link className="nav-link js-scroll-trigger" to="/Parks">Parks <span className="sr-only">(Parks)</span></Link>
+								<Link className="nav-link js-scroll-trigger" to="/Parks">
+									Parks <span className="sr-only">(Parks)</span>
+								</Link>
 							</li>
 							<li className="nav-item">
-							<Link className="nav-link js-scroll-trigger" to="/Profile">Profile <span className="sr-only">(Profile)</span></Link>
+								<Link className="nav-link js-scroll-trigger" to="/Profile">
+									Profile <span className="sr-only">(Profile)</span>
+								</Link>
 							</li>
 						</ul>
 					</div>
@@ -67,7 +74,7 @@ function Home() {
 								for a specific purpose based on the mission of the program under
 								which they are managed. Land for us all to explore and enjoy
 								together.
-								<a href="https://www.npca.org/articles/magazine">
+								<a href="https://www.npca.org/articles/magazine" target="_blank">
 									Learn more about resources here
 								</a>
 							</p>
@@ -80,107 +87,44 @@ function Home() {
 					/>
 				</div>
 			</section>
-			{/* <!-- Projects--> */}
+
 			<section className="projects-section bg-light" id="projects">
 				<div className="container">
-					<header>
-						<div
-							id="carouselExampleIndicators"
-							className="carousel slide"
-							data-ride="carousel"
-						>
-							<ol className="carousel-indicators">
-								<li
-									data-target="#carouselExampleIndicators"
-									data-slide-to="0"
-									className="active"
-								></li>
-								<li
-									data-target="#carouselExampleIndicators"
-									data-slide-to="1"
-								></li>
-								<li
-									data-target="#carouselExampleIndicators"
-									data-slide-to="2"
-								></li>
-							</ol>
-							<div className="carousel-inner" role="listbox">
-								{/* <!-- Slide One --> */}
-								<div
-									className="carousel-item active"
-									// style={{background-image: url('assets/img/patagonia.jpeg')}}
-									// <img className="patagonia" src={patagonia} alt="An out door clothing brand" />
-								>
-									<div className="carousel-caption d-none d-md-block">
-										<h3 className="display-4">First Ad</h3>
-										<p className="lead">
-											This is a description for the first slide.
-										</p>
-										<a
-											className="adSpace"
-											href="https://www.patagonia.com/stories/"
-										>
-											Visit Here
-										</a>
-									</div>
-								</div>
-								{/* <!-- Slide Two --> */}
-								<div
-									className="carousel-item"
-									// style={{backgroundImage: url('assets/img/iowa.jpg')}}
-								>
-									<div className="carousel-caption d-none d-md-block">
-										<a
-											className="adSpace"
-											href="https://www.iowadnr.gov/places-to-go/parks-2020"
-										>
-											Visit Here
-										</a>
-									</div>
-								</div>
-								{/* <!-- Slide Three --> */}
-								<div
-									className="carousel-item"
-									// style="background-image: url('assets/img/yet.jpg')"
-								>
-									<div className="carousel-caption d-none d-md-block">
-										<a
-											className="adSpace"
-											href="https://www.yeti.com/en_US/navy-color-collection.html/"
-										>
-											Visit Here
-										</a>
-									</div>
-								</div>
-							</div>
-							<a
-								className="carousel-control-prev"
-								href="#carouselExampleIndicators"
-								role="button"
-								data-slide="prev"
-							>
-								<span
-									className="carousel-control-prev-icon"
-									aria-hidden="true"
-								></span>
-								<span className="sr-only">Previous</span>
-							</a>
-							<a
-								className="carousel-control-next"
-								href="#carouselExampleIndicators"
-								role="button"
-								data-slide="next"
-							>
-								<span
-									className="carousel-control-next-icon"
-									aria-hidden="true"
-								></span>
-								<span className="sr-only">Next</span>
-							</a>
-						</div>
-					</header>
-					{/* 
-				<!-- Slider Content --> */}
+					<Carousel>
+						<Carousel.Item>
+							<img
+								className="d-block w-100"
+								src={"/assets/img/patagonia.jpeg"}
+								alt="First slide"
+							/>
+							<Carousel.Caption>
+								<a className="adSpace" href="https://www.patagonia.com/stories/" target="_blank">Visit Here</a>
+							</Carousel.Caption>
+						</Carousel.Item>
+						<Carousel.Item>
+							<img
+								className="d-block w-100"
+								src={"/assets/img/iowa.jpg"}
+								alt="Third slide"
+							/>
+
+							<Carousel.Caption>
+								<a className="adSpace" href="https://www.iowadnr.gov/places-to-go/parks-2020" target="_blank">Visit Here</a>
+							</Carousel.Caption>
+						</Carousel.Item>
+						<Carousel.Item>
+							<img
+								className="d-block w-100"
+								src={"/assets/img/yet.jpg"}
+								alt="Third slide"
+							/>
+
+							<Carousel.Caption>
+							<a className="adSpace" href="https://www.yeti.com/en_US/navy-color-collection.html/" target="_blank">Visit Here</a>
+							</Carousel.Caption>
+						</Carousel.Item>
+					</Carousel>
+
 					<section className="py-5">
 						<div className="container">
 							<h1 className="font-weight-light">Ad Space Here</h1>
@@ -189,7 +133,6 @@ function Home() {
 								organizations, conservations, state governemnts etc. to
 								advertise and promote wildlife and land preservation and
 								attraction.
-								{/* <!-- <a href="https://unsplash.com">Unsplash</a>! --> */}
 							</p>
 						</div>
 					</section>
@@ -215,6 +158,7 @@ function Home() {
 										<a
 											className="btn btn-primary js-scroll-trigger"
 											href="https://www.nwf.org/Our-Work/Our-Lands/Tribal-Lands"
+											target="_blank"
 										>
 											Read More
 										</a>
@@ -241,6 +185,7 @@ function Home() {
 										<a
 											className="btn btn-primary js-scroll-trigger"
 											href="https://winterwildlands.org/"
+											target="_blank"
 										>
 											Read More
 										</a>
@@ -268,6 +213,7 @@ function Home() {
 										<a
 											className="btn btn-primary js-scroll-trigger"
 											href="https://www.epa.gov/clean-air-act-overview/air-pollution-current-and-future-challenges"
+											target="_blank"
 										>
 											Read More
 										</a>
@@ -340,18 +286,20 @@ function Home() {
 						</div>
 					</div>
 					<div className="social d-flex justify-content-center">
-						<a className="mx-2" href="https://twitter.com/Interior">
-							<i className="fab fa-twitter"></i>
+						<a className="mx-2" href="https://twitter.com/Interior" target="_blank">
+							<i className="fab fa-twitter" ></i>
 						</a>
 						<a
 							className="mx-2"
 							href="https://www.facebook.com/USInterior/?ref=py_c"
+							target="_blank"
 						>
 							<i className="fab fa-facebook-f"></i>
 						</a>
 						<a
 							className="mx-2"
 							href="https://github.com/EmilyLee1003/nationalParks"
+							target="_blank"
 						>
 							<i className="fab fa-github"></i>
 						</a>
