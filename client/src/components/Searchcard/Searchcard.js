@@ -14,22 +14,18 @@ return (
             <h4 className="card-title">
                 <a href="#">{props.fullName}</a>
             </h4>
+           <img src={props.images}></img>
             <p className="card-text">
-                Description: Stretching between Shelter Cove to the south and
-                the Mattole River to the north, the Lost Coast is a wild land
-                of forests, fog, waves, and sand.
+            {props.discription}
             </p>
-            <p className="card-text">Location: Humboldt, CA</p>
+            <p className="card-text">{props.entranceFees}</p>
             {/* <p className="card-text">Difficulty: Hard</p>
             <p className="card-text">Distance: 25 Mi</p> */}
             <br></br>
             <a className="btn btn-primary js-scroll-trigger" href="#about">
                 Add Park
             </a>
-            <div className="divider"></div>
-            <a className="btn btn-primary js-scroll-trigger" href="#about">
-                More Info
-            </a>
+
         </div>
     </div>
         </div>
