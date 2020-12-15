@@ -1,6 +1,6 @@
 import React from "react";
 import CardBtn from "../CardBtn";
-// import "./style.css";
+// import "../pages/Home/Home.css";
 
 function Searchcard(props) {
 return (
@@ -11,20 +11,25 @@ return (
     <div className="card h-100">
         {/* <a href="#"><img className="card-img-top" src="./assets/img/lostCoast.jpg" alt=""></a> */}
         <div className="card-body">
-            <h4 className="card-title">
+            <h4 className="card-title title-adjust">
                 <a href="#">{props.fullName}</a>
             </h4>
-           <img src={props.images}></img>
-            <p className="card-text">
-            {props.discription}
+            <div>
+           <img className="parksPic" src={props.images}></img>
+           </div>
+           <div>
+            <p className="card-text cardDis">
+            {props.description}
             </p>
-            <p className="card-text">{props.entranceFees}</p>
-            {/* <p className="card-text">Difficulty: Hard</p>
-            <p className="card-text">Distance: 25 Mi</p> */}
+            </div>
             <br></br>
-            <a className="btn btn-primary js-scroll-trigger" href="#about">
+            <div>
+            <p className="card-text cardFees">{props.entranceFees}</p>
+            </div>
+            <br></br>
+            <button id={props.parkCode} className="btn btn-primary js-scroll-trigger" onClick={props.onClick}>
                 Add Park
-            </a>
+            </button>
 
         </div>
     </div>

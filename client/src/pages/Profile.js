@@ -2,8 +2,13 @@ import React, { useEffect } from "react";
 import "./Home/logo.svg";
 import "./Home/Home.css";
 import { Link } from "react-router-dom";
+import nationalParksAPI from "../utils/nationalparks";
 
 function Parks() {
+// 1. Use Effect, or component didmount that calls new search parks function and 2.loops through parksFav from local storage (or maybe a hook). 
+// 3. Once results are grabbed push into a results state 4.then map through results creating card
+
+
 	return (
 		<div>
 			{/* <!-- Navigation--> */}
