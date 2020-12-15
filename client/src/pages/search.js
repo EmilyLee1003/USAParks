@@ -1,4 +1,4 @@
-import React, { Component, useState, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import nationalParksAPI from "../utils/nationalparks";
 import Container from "../components/container";
 import SearchForm from "../components/searchForm";
@@ -6,9 +6,8 @@ import SearchResults from "../components/searchResults";
 import Alert from "../components/alert";
 import Button from "../components/button/index";
 import Btn from "../components/button/index";
+
 import Mapcontainer from "./Mapcontainer";
-
-
 
 //props is when its coming from parent to child 
 //whenever there is a prop you have to look at the parent and see what they're passing in
@@ -48,7 +47,8 @@ const handleInputChange = event => {
     console.log(event.target.value)
 };
 
-console.log(results)
+
+
 
 // const handleBtnClick =event => {
 //     const btnType =event.target.attributes.getNamedItem("data-value").value;
@@ -68,9 +68,11 @@ console.log(results)
           {error}
         </Alert>
 
+
         <Mapcontainer
           results={results}
           
+
         >
             
         </Mapcontainer>
@@ -79,6 +81,7 @@ console.log(results)
           results={currentValue}
             handleFormSubmit={handleFormSubmit}
           />
+
          
           <SearchResults
           
@@ -88,6 +91,7 @@ console.log(results)
             
             
         
+
      </Container>
       </div>
         )
