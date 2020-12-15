@@ -10568,3 +10568,20 @@ color: grey;
   height: auto;
   display: inline-block;
 }
+/* Park Card Pics */
+.parksPic{
+  height:300px;
+  width: 300px;
+  top:8em;
+}
+.title-adjust{
+  height: 100px;
+  vertical-align: inherit;
+}
+.cardDis{
+  height: 200px;
+}
+
+/* .cardFees{
+  height: 100px;
+} */

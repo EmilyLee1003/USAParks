@@ -12,7 +12,7 @@ function SearchResults(props) {
 
   <div className="row">
           {props.results.map(r => {
-            return <Searchcard fullName={r.fullName} discription={r.discription} entranceFees={r.entranceFees.map( q => {
+            return <Searchcard onClick={props.handleAddProfile} parkCode={r.parkCode} fullName={r.fullName} description={r.description} entranceFees={r.entranceFees.map( q => {
               return <li className="list-group-item">{q.title} {q.description} {q.cost} </li>
             })} images={r.images[0].url}></Searchcard>
             

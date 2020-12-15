@@ -13,6 +13,19 @@ function Parks() {
 	const [results, setResults] = useState([]);
 	const [error, setError] = useState("");
 
+	const handleAddProfile = (e) => {
+		e.preventDefault();
+		console.log(e.target.id);
+		let parkFavs = JSON.parse(localStorage.getItem("parkFavs")) || [];
+		let favObj = {
+			parkCode: e.target.id
+			
+		};
+		console.log(favObj);
+		parkFavs.push(favObj);
+		localStorage.setItem("parkFavs", JSON.stringify(parkFavs))
+	};
+
 	const handleFormSubmit = (e) => {
 		e.preventDefault();
 		if (!currentValue) {
@@ -111,7 +124,10 @@ function Parks() {
 								more about the surrounding parks. These experiences help young
 								people have an immersive outdoor experiences in nature. Which we
 								hope they can share and teach with to the generations to come.
-								<a href="https://www.nationalgeographic.com/travel/travel-interests/tips-and-advice/9-tips-to-remember--traveling-national-parks/" target="_blank">
+								<a
+									href="https://www.nationalgeographic.com/travel/travel-interests/tips-and-advice/9-tips-to-remember--traveling-national-parks/"
+									target="_blank"
+								>
 									Learn more about resources here
 								</a>
 							</p>
@@ -164,7 +180,10 @@ function Parks() {
 				</h1>
 
 				{/* Trails */}
-				<SearchResults results={results}></SearchResults>
+				<SearchResults
+					handleAddProfile={handleAddProfile}
+					results={results}
+				></SearchResults>
 
 				{/* <!-- Page Display --> */}
 				<ul className="pagination justify-content-center">
