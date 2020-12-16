@@ -10574,12 +10574,28 @@ color: grey;
   width: 300px;
   top:8em;
 }
+
 .title-adjust{
   height: 100px;
   vertical-align: inherit;
 }
 .cardDis{
   height: 200px;
+}
+
+.cardDiv1{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 4;
+  -webkit-box-orient: vertical;
+  
+}
+
+.entranceFee{
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 10;
+  -webkit-box-orient: vertical;
 }
 
 /* .cardFees{
