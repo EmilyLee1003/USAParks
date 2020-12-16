@@ -285,7 +285,7 @@ function Home() {
 							</div>
 						</div>
 					</div>
-					<div className="social d-flex justify-content-center">
+					{/* <div className="social d-flex justify-content-center">
 						<a className="mx-2" href="https://twitter.com/Interior" target="_blank">
 							<i className="fab fa-twitter" ></i>
 						</a>
@@ -303,7 +303,7 @@ function Home() {
 						>
 							<i className="fab fa-github"></i>
 						</a>
-					</div>
+					</div> */}
 				</div>
 			</section>
 			{/* <!-- Footer--> */}
