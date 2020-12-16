@@ -21,11 +21,23 @@ if (process.env.NODE_ENV === 'production') {
   app.use(express.static('client/build'))
 }
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/users', {
-  useNewUrlParser: true,
-  useFindAndModify: false,
+// mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost/users', {
+//   useNewUrlParser: true,
+//   useFindAndModify: false,
+// })
+
+mongoose.connect( 'mongodb://localhost/parks');
+  let db = mongoose.connection 
+
+//check for db error
+db.on('error', function(){
+  console.log(error);
 })
 
+//check conncection 
+db.once('open', function(){
+  console.log("connected to MongoDB")
+});
 // routes
 app.use('/api', router)
 // app.use('/r', testRouter)

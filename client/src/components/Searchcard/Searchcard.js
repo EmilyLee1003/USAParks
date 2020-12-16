@@ -1,5 +1,6 @@
 import React from "react";
 import CardBtn from "../CardBtn";
+import "./style.css";
 // import "../pages/Home/Home.css";
 
 function Searchcard(props) {
@@ -17,13 +18,13 @@ return (
             <div>
            <img className="parksPic" src={props.images}></img>
            </div>
-           <div>
+           <div className="cardDiv1">
             <p className="card-text cardDis">
             {props.description}
             </p>
             </div>
             <br></br>
-            <div>
+            <div className="entranceFee">
             <p className="card-text cardFees">{props.entranceFees}</p>
             </div>
             <br></br>
