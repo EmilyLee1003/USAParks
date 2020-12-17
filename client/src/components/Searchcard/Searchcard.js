@@ -5,7 +5,6 @@ import API from "../../utils/API"
 // import "../pages/Home/Home.css";
 
 function Searchcard(props) {
-const [parks, setParks] =useState([])
 //load all parks and store them with setParks
 
 
