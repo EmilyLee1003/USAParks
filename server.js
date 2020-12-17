@@ -5,7 +5,7 @@ const morgan = require('morgan');
 const dotenv = require('dotenv');
 
 // const testRouter = require('./routes/testRouters.mjs');
-const router = require('./routes/api.js');
+const router = require('./routes/index');
 
 dotenv.config({ silent: process.env.NODE_ENV === 'production' })
 
@@ -49,3 +49,6 @@ app.get('*', (req, res) => {
 app.listen(PORT, () => {
   console.log(`🌎 ==> API server now on port ${PORT}!`)
 })
+
+
+//server api was not on because the package.json was messed up. so had to do npm run start:prod 
