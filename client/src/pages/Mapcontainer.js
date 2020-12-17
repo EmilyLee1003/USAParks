@@ -41,8 +41,13 @@ console.log(props)
         // onLoad={onLoad}
         onUnmount={onUnmount}
       >
-       {props.results.map(r=><Marker position={{lat:+r.latitude, lng: +r.longitude}} />)} 
+       {props.results.map(r=><Marker position={{lat:+r.latitude, lng: +r.longitude}}/>
        
+       
+    
+       )} 
+
+  
          
 
       

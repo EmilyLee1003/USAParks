@@ -6,25 +6,27 @@ import Searchcard from "../components/Searchcard/Searchcard";
 import { Link } from "react-router-dom";
 import SearchResults from "../components/searchResults";
 import nationalParksAPI from "../utils/nationalparks";
+import API from "../utils/API"
 
 function Parks() {
 	const [currentValue, setCurrentValue] = useState("");
 	// const[states, setState] =useState("");
 	const [results, setResults] = useState([]);
 	const [error, setError] = useState("");
+	// const [parks, setParks] =useState([]);
 
-	const handleAddProfile = (e) => {
-		e.preventDefault();
-		console.log(e.target.id);
-		let parkFavs = JSON.parse(localStorage.getItem("parkFavs")) || [];
-		let favObj = {
-			parkCode: e.target.id
+	// const handleAddProfile = (e) => {
+	// 	e.preventDefault();
+	// 	console.log(e.target.id);
+	// 	let parkFavs = JSON.parse(localStorage.getItem("parkFavs")) || [];
+	// 	let favObj = {
+	// 		parkCode: e.target.id
 			
-		};
-		console.log(favObj);
-		parkFavs.push(favObj);
-		localStorage.setItem("parkFavs", JSON.stringify(parkFavs))
-	};
+	// 	};
+	// 	console.log(favObj);
+	// 	parkFavs.push(favObj);
+	// 	localStorage.setItem("parkFavs", JSON.stringify(parkFavs))
+	// };
 
 	const handleFormSubmit = (e) => {
 		e.preventDefault();
@@ -46,12 +48,15 @@ function Parks() {
 				console.log(res.data.data);
 			})
 			.catch((err) => setError(err));
+			
 	};
 
 	const handleInputChange = (event) => {
 		setCurrentValue(event.target.value);
 		console.log(event.target.value);
 	};
+
+
 
 	return (
 		<div>
@@ -181,7 +186,7 @@ function Parks() {
 
 				{/* Trails */}
 				<SearchResults
-					handleAddProfile={handleAddProfile}
+					// handleAddProfile={handleAddProfile}
 					results={results}
 				></SearchResults>
 

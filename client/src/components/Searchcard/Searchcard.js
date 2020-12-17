@@ -1,11 +1,26 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import CardBtn from "../CardBtn";
 import "./style.css";
+import API from "../../utils/API"
 // import "../pages/Home/Home.css";
 
 function Searchcard(props) {
-return (
+const [parks, setParks] =useState([])
+//load all parks and store them with setParks
 
+
+  function addPark(){
+      API.savePark({
+        fullName : props.fullName,
+        parkCode : props.parkCode,
+        description : props.description
+      })
+      
+  }
+
+
+
+return (
 
 
 <div className="col-lg-4 col-sm-6 mb-4">
@@ -28,8 +43,8 @@ return (
             <p className="card-text cardFees">{props.entranceFees}</p>
             </div>
             <br></br>
-            <button id={props.parkCode} className="btn btn-primary js-scroll-trigger" onClick={props.onClick}>
-                Add Park
+            <button id={props.parkCode} className="btn btn-primary js-scroll-trigger" onClick={addPark}  >
+                Add Park 
             </button>
 
         </div>

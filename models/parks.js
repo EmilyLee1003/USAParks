@@ -1,8 +1,9 @@
-let mongoose = require('mongoose');
+const mongoose = require('mongoose');
+const Schema = mongoose.Schema;
 
 //park schema 
 
-let parkSchema = mongoose.Schema({
+const parkSchema = new Schema({
     parkCode:{
         type: String,
         required: true
@@ -17,5 +18,6 @@ let parkSchema = mongoose.Schema({
     }
 
 })
+const Parks = mongoose.model('Parks', parkSchema);
+module.exports= Parks;
 
-let Parks = module.exports= mongoose.model('Parks', parkSchema);
