@@ -3,7 +3,6 @@
   "version": "0.1.0",
   "description": "Mern Demo",
   "private": true,
-  "proxy": "http://127.0.0.1:8000/",
   "secure": false,
   "dependencies": {
     "@react-google-maps/api": "^1.13.0",
